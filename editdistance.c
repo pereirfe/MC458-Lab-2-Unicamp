@@ -123,9 +123,9 @@ int editDistance(char *x, char *y, int *c, int* seq) {
 	//salva o resultado para dar o free na tabela
 	int result = table[m][n].v;
 
-	for (i = 0; i<=m; i++)
-		{free(table[i]);}
-	free(table);
+	/* for (i = 0; i<=m; i++) */
+	/* 	{free(table[i]);} */
+	/* free(table); */
 
 	return result;
 	
@@ -199,9 +199,9 @@ int main(void) {
 	}
 	
 
-	free(x);
-	free(y);
-	free(seq);
+	//	free(x);
+	//free(y);
+	//free(seq);
 
 	return 0;
 	
