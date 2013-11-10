@@ -23,12 +23,10 @@ typedef struct {
 int min(int a[], int size) {
   int i, min;
   min = 0;
-  for(i = 1; i < size; i++)
-    {
-      if (a[i] < a[min]) 
-	min = i;
-			
-    }
+  for(i = 1; i < size; i++){
+    if (a[i] < a[min]) 
+      min = i;  
+  }
   return min;
 }
 
@@ -135,7 +133,6 @@ int main(void) {
     editDistance(x,y,cost,seq);
   }
   /* printf("%d\n",-c); */
-
   /* for(i=0; seq[i] >= 0; i++){} */
   /* i--; */
 

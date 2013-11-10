@@ -33,19 +33,24 @@ int main(void) {
       
   fclose(words);
 
-  printf("EI?!");
+  for(i=0; dict[i]!='\0'; i++);
+  i--;
+
+  printf("i: %d\n", i);
 
   for(size=50; size<=5000; size+=50){
     for(t=0; t<5; t++){
       tx = 1 + rand()%(size-1);
       ty = size - tx;
 
-      int stx = rand()%(SIZEDICT-tx);
+      int stx = rand()%(i-tx-1);
       strncpy(x, &dict[stx], tx);
+      x[tx] = '\0';
 
-      int sty = rand()%(SIZEDICT-ty);
+      int sty = rand()%(i-ty-1);
       strncpy(y, &dict[sty], ty);
-      
+      y[ty] = '\0';
+
       sprintf(namef, "ins.dna.%d.%d.txt", size, t);
       fp = fopen(namef, "w");
       fprintf(fp, "%d %d\n%s\n%s\n", tx, ty, x, y);
